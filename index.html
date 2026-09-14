@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chúc mừng sinh nhật chị Hà</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0D1B2A 0%, #C8102E 100%);
+    font-family: -apple-system, Roboto, Arial, sans-serif;
+    text-align: center;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+  .card {
+    background: #FFF8E7;
+    border-radius: 16px;
+    padding: 32px 24px;
+    max-width: 420px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  h1 {
+    color: #C8102E;
+    font-size: 22px;
+    margin: 0 0 8px;
+  }
+  p {
+    color: #0D1B2A;
+    font-size: 15px;
+    margin: 0 0 20px;
+  }
+  audio {
+    width: 100%;
+  }
+  #tap {
+    display: none;
+    margin-top: 16px;
+    background: #C8102E;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎉 Chúc mừng sinh nhật chị Hà</h1>
+    <p>Xin chị bấm nghe lời chúc từ chúng em</p>
+    <audio id="player" controls autoplay>
+      <source src="chuc_mung.mp3" type="audio/mpeg">
+    </audio>
+    <button id="tap" onclick="document.getElementById('player').play()">▶ Nghe lời chúc</button>
+  </div>
+  <script>
+    const player = document.getElementById('player');
+    player.play().catch(() => {
+      document.getElementById('tap').style.display = 'inline-block';
+    });
+  </script>
+</body>
+</html>
